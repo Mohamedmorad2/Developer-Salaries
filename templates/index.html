@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Salaries In Egypt at 2024</title>
+</head>
+<body>
+
+<div class="form-container" >
+    <h2>Salaries In Egypt at 2024</h2>
+    <form method="post" action="{{ url_for('submit_form') }}">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required>
+
+
+        <label for="yearsOfExperience">Years of Experiences:</label>
+        <input type="text" id="yearsOfExperience" name="yearsOfExperience" required>
+
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary" required>
+
+        <label for="paymentDate">Date of Salary:</label>
+        <input type="date" id="paymentDate" name="paymentDate" required>
+        
+        <label for="workLocation">What Is your Company:</label>
+        <select id="workLocation" name="workLocation" required>
+            <option value="...">...</option>
+            <option value="Egyption">Egyption</option>
+            <option value="Not Egyption but site in egypt">Not Egyption but site in egypt</option>
+            <option value="Not Egyption and site out of egypt">Not Egyption and site out of egypt</option>
+        </select>
+        
+        <label for="WorkType">Work Type:</label>
+        <select id="workType" name="workType" required>
+            <option value="...">...</option>
+            <option value="On Site">On Site</option>
+            <option value="Hybird">Hybird</option>
+            <option value="Remotley">Remotley</option>
+        </select>
+
+        <label for="workHour">Work Hour:</label>
+        <select id="workHour" name="workHour" required>
+            <option value="...">...</option>
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
+        </select>
+        
+
+        <label for="cityOfCompanySite">City of Company site:</label>
+        <input type="text" id="cityOfCompanySite" name="cityOfCompanySite" required>
+
+
+
+            <button type="submit" class="button-container">Send</button>
+
+        
+    </form>
+</div>
+
+</body>
+</html>
