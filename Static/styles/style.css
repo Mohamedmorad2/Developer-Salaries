@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0EBF8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Media queries for responsiveness */
+
+@media only screen and (max-width: 480px) {
+    /* Adjust styles for screens with a maximum width of 480px */
+    .form-container {
+        width: 95%;
+    }
+}
+
+
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+    /* Adjust styles for screens with a width between 481px and 600px */
+    .form-container {
+        width: 80%;
+        margin-top: 70px;
+
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+    /* Adjust styles for screens with a width between 481px and 600px */
+    .form-container {
+        width: 90%;
+
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    /* Adjust styles for screens with a width between 601px and 768px */
+    .form-container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Adjust styles for screens with a width between 769px and 1024px */
+    .form-container {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Adjust styles for screens with a width between 1025px and 1200px */
+    .form-container {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    /* Adjust styles for screens with a width of 1201px or more */
+    .form-container {
+        width: 600px; /* Keep it fixed for larger screens */
+    }
+}
