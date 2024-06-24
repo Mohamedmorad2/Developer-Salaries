@@ -26,15 +26,18 @@ def submit_form():
         work_type = request.form.get('workType')
         work_hour = request.form.get('workHour')
         city_of_company_site = request.form.get('cityOfCompanySite')
-        current_time_str = datetime.now().strftime('%Y-%m-%d %I:%M:%S %p')
-        current_time_obj = datetime.strptime(current_time_str, '%Y-%m-%d %I:%M:%S %p')
+        now = datetime.now()
+        current_date = now.date()
+        current_datetime = now.strftime("%H:%M:%S")
+        current_time_obj = datetime.strptime(current_datetime, "%H:%M:%S")
 
 
         # Convert values to a tuple
-        data = (job_title, years_of_experience, salary, payment_date, work_location, work_type, work_hour, city_of_company_site,current_time_obj)
+        data = (job_title, years_of_experience, salary, payment_date, work_location, work_type, work_hour, city_of_company_site,current_date,current_time_obj)
 
         # Insert data into the 'Salaries_In_Egypt_at_2024' table
-        insert_query = """INSERT INTO Salaries_In_Egypt_at_2024 (Job_Title,
+        insert_query = """INSERT INTO Salaries_In_Egypt_at_2024 (
+                                                                Job_Title,
                                                                 Years_of_Experiences,
                                                                 Salary, 
                                                                 Date_of_Salary,
@@ -42,8 +45,10 @@ def submit_form():
                                                                 Work_Type,
                                                                 Work_Hour,
                                                                 City_of_Company_site,
-                                                                Process_time) 
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                                                                Process_Date,
+                                                                Process_time
+                                                                ) 
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
         cur = mysql.connection.cursor()
         cur.execute(insert_query, data)
         mysql.connection.commit()
